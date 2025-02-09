@@ -2,9 +2,12 @@ import random
 import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import ttk
+from tkinter.messagebox import showinfo
 
 def dadu():
-    return random.randint(1,6)
+    get_angka = random.randint(1,6)
+    showinfo(title="Hasil Dadu : ", message=get_angka,)
+    
 
 # Buat root screen
 sc_dadu = tk.Tk()
@@ -25,8 +28,12 @@ bg_label.place(relheight=1, relwidth=1)
 main_frame = ttk.Frame(sc_dadu)
 main_frame.pack(padx=10,pady=10,fill="x",expand=True)
 
-# label coba
-ket_dadu = ttk.Label(main_frame, text="Lempar Dadu Untuk Memulai!",justify='center',anchor='center')
+# label Keterangan
+ket_dadu = ttk.Label(main_frame, text="Lempar Dadu Untuk Memulai!",justify='center',anchor='center',font=('Poppins',18))
 ket_dadu.pack(padx=10,pady=10,fill="x",expand=True)
+
+# Button dadu
+btn_dadu = ttk.Button(main_frame, text="Lempar Sekarang", command=dadu, default='disabled')
+btn_dadu.pack(padx=10,pady=10,fill="x",expand=False)
 
 sc_dadu.mainloop()
