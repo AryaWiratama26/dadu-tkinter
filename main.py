@@ -5,8 +5,8 @@ from tkinter import ttk
 from tkinter.messagebox import showinfo
 
 def dadu():
-    get_angka = random.randint(1,6)
-    showinfo(title="Hasil Dadu : ", message=get_angka,)
+    get_angka = f"Hasil dadu : {random.randint(1,6)}"
+    showinfo(title="Hasil", message=get_angka,)
     
 
 # Buat root screen
@@ -33,7 +33,8 @@ ket_dadu = ttk.Label(main_frame, text="Lempar Dadu Untuk Memulai!",justify='cent
 ket_dadu.pack(padx=10,pady=10,fill="x",expand=True)
 
 # Button dadu
-btn_dadu = ttk.Button(main_frame, text="Lempar Sekarang", command=dadu, default='disabled')
+btn_dadu = ttk.Button(main_frame, text="Lempar Sekarang", command=dadu)
 btn_dadu.pack(padx=10,pady=10,fill="x",expand=False)
 
+# Loop
 sc_dadu.mainloop()
